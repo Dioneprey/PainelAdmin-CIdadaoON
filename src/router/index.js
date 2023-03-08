@@ -1,10 +1,20 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import DashboardPage from '../pages/dashboardPage.vue'
+import HomeView from '../views/HomeView.vue'
+import UsuarioView from '../views/CidadaoView.vue'
 
 
 const routes = [
-  { path: '/', name: 'Dashboard', component: DashboardPage },
+  {
+    path: '/',
+    name: 'Home',
+    component: HomeView
+  },
+  {
+    path: '/cidadaos',
+    name: 'Usuarios',
+    component: UsuarioView
+  },
 
 ]
 
