@@ -2,7 +2,13 @@
   <header>
     <div class="container">
       <nav>
-        <span>{{ title }}</span>
+        <div class="title">
+          <span>{{ title }}</span>
+        </div>
+        <div class="flex"></div>
+        <router-link class="button" to="/settings">
+          <span class="material-icons">account_circle</span>
+        </router-link>
       </nav>
     </div>
   </header>
@@ -17,7 +23,7 @@ export default {
 }
 </script>
 
-<style Lang="scss">
+<style Lang="scss" scoped>
 header {
   background: var(--light);
   height: 90px;
@@ -34,5 +40,12 @@ nav {
   align-items: flex-end;
   padding-bottom: 20px;
   border-bottom: 1px solid #e2e2e2;
+}
+.flex {
+  flex: 1 1 0;
+}
+.material-icons {
+  font-size: 40px;
+  color: var(--dark-alt);
 }
 </style>

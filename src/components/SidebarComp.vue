@@ -15,21 +15,30 @@
         <span class="material-icons">home</span>
         <span class="text">Home</span>
       </router-link>
-      <router-link class="button" to="/cidadaos">
+      <router-link class="button" to="/solicitacoes">
         <span class="material-icons">face</span>
-        <span class="text">Cidadãos</span>
+        <span class="text">Solicitações</span>
       </router-link>
-      <router-link class="button" to="/cidadaos">
+      <router-link class="button" to="/1">
         <span class="material-icons">business</span>
         <span class="text">Secretarias</span>
       </router-link>
-      <router-link class="button" to="/cidadaos">
+      <router-link class="button" to="/2">
         <span class="material-icons">analytics</span>
         <span class="text">Gráficos</span>
       </router-link>
-      <router-link class="button" to="/cidadaos">
+      <router-link class="button" to="/3">
         <span class="material-icons">notification_important</span>
-        <span class="text">Solicitações</span>
+        <span class="text">Notificações</span>
+      </router-link>
+    </div>
+
+    <div class="flex"></div>
+
+    <div class="menu">
+      <router-link style="border: 0;" class="button" to="/settings">
+        <span class="material-icons">settings</span>
+        <span class="text">Configuração</span>
       </router-link>
     </div>
   </aside>
@@ -38,9 +47,11 @@
 <script setup>
 import { ref } from 'vue'
 
-const is_expanded = ref(false)
+const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
+
 const toggleMenu = () => {
   is_expanded.value = !is_expanded.value
+  localStorage.setItem("is_expanded", is_expanded.value)
 }
 </script>
 
@@ -51,12 +62,16 @@ const toggleMenu = () => {
     width: calc(2rem + 32px);
     min-height: 100vh;
     overflow: hidden;
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
 
     background-color: var(--dark);
     color: var(--light);
 
     transition: 0.2s ease-out;
+
+    .flex {
+      flex: 1 1 0;
+    }
 
     .logo {
       margin-bottom: 1rem;
@@ -92,16 +107,15 @@ const toggleMenu = () => {
       }
     }
 
-
     h3, .button .text {
       opacity: 0;
-      margin-left: 10px;
       transition: 0.3s ease-out;
     }
 
     .menu {
       display: flex;
       flex-direction: column;
+      margin: 0 -1rem;
 
       .button {
         display: flex;
@@ -109,29 +123,47 @@ const toggleMenu = () => {
         align-items: center;
         text-decoration: none;
         border-bottom: 1px solid var(--dark-alt);
+
         padding: 1.5rem 0;
         transition: 0.1s ease-out;
 
         .material-icons {
           font-size: 2rem;
+          margin-left: 1rem;
           transition: 0.2s ease-out;
         }
-      }
-      .button:hover {
-          color: var(--primary);
+
+        &:hover, &.router-link-exact-active {
+          background-color: var(--dark-alt);
+          filter: drop-shadow(0 0 3px var(--dark-alt));
+          .material-icons, .text {
+            color: var(--primary);
+          }
+        }
+
+        &.router-link-exact-active {
+          border-right: 5px solid var(--primary);
+        }
       }
     }
 
     &.is-expanded {
       width: var(--sidebar-width);
 
-      .text {
-      opacity: 1;
-      }
       .menu-toggle-wrap {
         top: -3rem;
         .menu-toggle {
           transform: rotate(-180deg);
+        }
+      }
+
+      h3, .button .text {
+      opacity: 1;
+      }
+
+      .button {
+        .material-icons {
+          margin-right: 1rem;
         }
       }
     }

@@ -1,7 +1,7 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import UsuarioView from '../views/CidadaoView.vue'
+import SolicitacaoView from '../views/SolicitacaoView.vue'
 
 
 const routes = [
@@ -11,9 +11,9 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/cidadaos',
-    name: 'Usuarios',
-    component: UsuarioView
+    path: '/solicitacoes',
+    name: 'Solicitacoes',
+    component: SolicitacaoView
   },
 
 ]
