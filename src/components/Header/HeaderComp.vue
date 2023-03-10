@@ -25,6 +25,7 @@ export default {
 
 <style Lang="scss" scoped>
 header {
+  user-select: none;
   background: var(--light);
   height: 90px;
   font-family: 'Fira Sans', sans-serif;

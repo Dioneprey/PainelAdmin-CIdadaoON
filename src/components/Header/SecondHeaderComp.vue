@@ -51,6 +51,7 @@ header {
   background: var(--light);
   height: 80px;
   display: flex;
+  user-select: none;
 }
 nav {
   height: 100%;
@@ -140,12 +141,6 @@ input:focus {
 #export #two {
   padding-left: 72px;
   cursor: pointer;
-}
-.div-border {
-  height: 25px;
-  width: 1px;
-  margin: 0 20px;
-  background: var(--border-color);
 }
 .flex {
   flex: 1 1 0;

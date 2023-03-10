@@ -1,7 +1,7 @@
 <template>
   <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
     <div class="logo">
-      <img src="../assets/logo.png" alt="vue">
+      <img src="../../assets/logo.png" alt="vue">
     </div>
 
     <div class="menu-toggle-wrap">
@@ -23,7 +23,7 @@
         <span class="material-icons">business</span>
         <span class="text">Secretarias</span>
       </router-link>
-      <router-link class="button" to="/2">
+      <router-link class="button" to="/graficos">
         <span class="material-icons">analytics</span>
         <span class="text">Gráficos</span>
       </router-link>
@@ -59,13 +59,13 @@ const toggleMenu = () => {
   aside {
     display: flex;
     flex-direction: column;
-    width: calc(2rem + 32px);
-    min-height: 100vh;
-    overflow: hidden;
-    padding: 1rem 1rem 0 1rem;
-
+    user-select: none;
     background-color: var(--dark);
     color: var(--light);
+
+    width: calc(2rem + 32px);
+    min-height: 100vh;
+    padding: 1rem 1rem 0 1rem;
 
     transition: 0.2s ease-out;
 
@@ -101,7 +101,7 @@ const toggleMenu = () => {
           &:hover {
             .material-icons {
               color: var(--primary);
-              transform: translateX(0.2rem);
+              transform: translateX(0.3rem);
             }
           }
       }
@@ -113,8 +113,6 @@ const toggleMenu = () => {
     }
 
     .menu {
-      display: flex;
-      flex-direction: column;
       margin: 0 -1rem;
 
       .button {
@@ -122,6 +120,7 @@ const toggleMenu = () => {
         color: var(---light);
         align-items: center;
         text-decoration: none;
+
         border-bottom: 1px solid var(--dark-alt);
 
         padding: 1.5rem 0;
@@ -168,9 +167,6 @@ const toggleMenu = () => {
       }
     }
 
-    @media (max-width: 768px) {
-      position: fixed;
-      z-index: 99;
-    }
+
   }
 </style>

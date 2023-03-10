@@ -36,6 +36,7 @@ export default {
 <style lang="scss" scoped>
 .pagination-div {
   height: 80px;
+  user-select: none;
   width: 100%;
   display: flex;
   color: var(--grey);
@@ -44,10 +45,11 @@ export default {
 .pagination-div {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .pagination-div select {
   outline: none;
-  background-color: #fff;
+  background-color: #transparant;
   padding: 5px 0px 5px 10px;
   width: max(3vw, 30px);
   border: 1px solid var(--border-color);
@@ -60,8 +62,7 @@ export default {
   font-weight: bolder;
   color: #4e4e4e;
   position: absolute;
-  right: 35px;
-  z-index: 20;
+  right: 0px;
   font-size: 25px;
 }
 .flex {
