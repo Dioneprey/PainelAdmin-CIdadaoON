@@ -57,7 +57,7 @@ export default {
   padding: var(--padding);
   min-height: 100px;
   align-items: center;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid var(--border-color);
 	grid-template-columns: 6.5% 13.8% 14.5% 14.4% 13.8% 13.9% 14.6% 20px;
 
   &:hover {

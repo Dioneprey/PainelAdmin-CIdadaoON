@@ -31,6 +31,9 @@ props: {
 </script>
 
 <style lang="scss" scoped>
+main {
+  background: var(--light);
+}
 .pageselect {
   margin-top: 50px;
   padding: 0 min(2vw, 30px);

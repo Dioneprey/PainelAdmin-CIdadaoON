@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="container">
-      <nav>
+      <nav :class="`${border ? 'semborder' : ''}`">
         <div class="title">
           <span>{{ title }}</span>
         </div>
@@ -18,7 +18,8 @@
 export default {
   name: "HeaderComp",
   props: {
-    title: String
+    title: String,
+    border: Boolean
  }
 }
 </script>
@@ -40,7 +41,10 @@ nav {
   display: flex;
   align-items: flex-end;
   padding-bottom: 20px;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid var(--border-color);
+}
+.semborder {
+  border-bottom: none;
 }
 .flex {
   flex: 1 1 0;

@@ -19,7 +19,7 @@ import SidebarComp from './components/Sidebar/SidebarComp.vue'
 	--light: #f8f8f9;
 	--w-light: #ffffff;
 	--sidebar-width: 300px;
-  --border-color: #e2e2e2;
+  --border-color: #ebebeb;
   --padding: 0 min(3.5vw, 30px);;
 }
 * {
@@ -29,6 +29,27 @@ import SidebarComp from './components/Sidebar/SidebarComp.vue'
 	font-family: 'Fira sans', sans-serif;
 
 }
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark-alt);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark);
+}
+
+
+
+
+
+
+
+
+
 body {
 	background: var(--w-light);
 }

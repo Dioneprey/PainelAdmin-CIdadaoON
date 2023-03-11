@@ -4,35 +4,48 @@
         <div class="cards">
           <div class="card">
             <p>Pendentes</p>
-            <span>10</span>
+            <span>{{ pendentes.length }}</span>
           </div>
+          <div class="borderlinha"></div>
           <div class="card">
             <p>Em andamento</p>
-            <span>15</span>
+            <span>{{ andamento.length}}</span>
           </div>
+          <div class="borderlinha"></div>
           <div class="card">
             <p>Concluídas</p>
-            <span>25</span>
+            <span>{{ concluidas.length }}</span>
           </div>
         </div>
     </div>
   </header>
 </template>
 
-<script>
-export default {
-  name: "GraficoHeader"
-}
+<script setup>
+const props = defineProps({
+  items: Array,
+})
+const pendentes = props.items.filter(pendente => pendente.Situacao == "Pendente")
+const andamento = props.items.filter(andamento => andamento.Situacao == "Andamento")
+const concluidas = props.items.filter(concluidas => concluidas.Situacao == "Concluída")
 </script>
 
 <style lang="scss" scoped>
 .cards {
   display: flex;
-
+  align-items: center;
+  justify-content: center;
+  .borderlinha {
+    width: 10%;
+    height: 1px;
+    background-color: var(--border-color);
+  }
   .card {
-  margin: 30px auto;
+  margin: 30px 0;
   width: 300px;
   height: 160px;
+
+  box-shadow: 0 0 6px var(--border-color);
 
   display: flex;
   flex-direction: column;
